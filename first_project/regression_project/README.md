@@ -1,4 +1,109 @@
-# regression_project
+#  Regression project
+
+# Project Setup Instructions
+
+This project uses Conda to manage dependencies and ensure a reproducible environment.
+
+---
+
+## 1. Create a Conda environment
+
+Before working on the project, create a dedicated Conda environment to isolate dependencies:
+
+```bash
+conda create -n ml_project1 python=3.11 -y
+```
+
+This command:
+- Creates a new environment called `ml_project1`
+- Installs Python 3.11 inside the environment
+- Avoids conflicts with other projects or system Python
+
+---
+
+## 2. Activate the environment
+
+Activate the environment every time you work on the project:
+
+```bash
+conda activate ml_project1
+```
+
+You should see `(ml_project1)` at the beginning of your terminal prompt.
+
+---
+
+## 3. Verify the Python interpreter (optional but recommended)
+
+```bash
+python --version
+where python
+```
+
+The Python path should point to:
+
+```
+.../anaconda3/envs/ml_project1/python.exe
+```
+
+---
+
+## 4. Install Cookiecutter
+
+With the environment activated, install Cookiecutter:
+
+```bash
+pip install cookiecutter
+```
+
+Cookiecutter is used to generate a standard data science project structure from a template.
+
+---
+
+## 5. Generate the project structure
+
+Navigate to the directory where you want the project to be created:
+
+```bash
+cd path/to/your/projects/folder
+```
+
+Then run:
+
+```bash
+cookiecutter https://github.com/CodeCutTech/data-science-template
+```
+
+You will be prompted to provide basic project information (project name, author, description, etc.).  
+Cookiecutter will then generate a ready-to-use project structure following data science best practices.
+
+---
+
+## 6. Install project dependencies (if applicable)
+
+If the project includes a `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+If it includes an `environment.yml` file:
+
+```bash
+conda env create -f environment.yml
+conda activate ml_project1
+```
+
+---
+
+## Best Practices
+
+- Create the Conda environment once
+- Always activate the environment before working on the project
+- Install dependencies only when the environment is active
+- Use one environment per project for reproducibility
+
+
 
 ## Tools used in this project
 
