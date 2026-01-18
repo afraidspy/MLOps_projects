@@ -1,10 +1,11 @@
 #  Regression project
 
-# Project Setup Instructions
-
 This project uses Conda to manage dependencies and ensure a reproducible environment.
 
 ---
+
+# Project Setup Instructions
+
 
 ## 1. Create a Conda environment
 
