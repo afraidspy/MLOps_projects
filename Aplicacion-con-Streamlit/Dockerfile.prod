@@ -1,0 +1,28 @@
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED True
+
+WORKDIR /usr/src/app
+
+COPY ./requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./src ./src
+COPY ./src/precio_casas_pipeline.joblib .
+
+
+EXPOSE 4000
+
+ENTRYPOINT ["sh", "-c", "streamlit run src/basics_streamlit.py --server.address=0.0.0.0 --server.port=${PORT} --server.enableCORS=false --server.enableXsrfProtection=false"]
+#ENTRYPOINT ["sh", "-c", "python -c \"import sys, pkgutil; print('PYTHON:', sys.executable); print('HAS_JOBLIB:', any(m.name=='joblib' for m in pkgutil.iter_modules()))\" && python -m pip show joblib || true && streamlit run src/basics_streamlit.py --server.address=0.0.0.0 --server.port=${PORT} --server.enableCORS=false --server.enableXsrfProtection=false"]
+
+
+
+
+
+#PASO 1: Construimos la imagen:
+#   gcloud builds submit --config=cloudbuild.yaml --project servicio-datapath-edicion8
+#PASO 2: Lanzamos el Servicio:
+#   gcloud run services replace service.yaml --region us-east1 --project servicio-datapath-edicion8
+
+#gcloud run services set-iam-policy servicio-api-datapath-edicion8 gcr-service-policy.yaml --region us-east1 --project servicio-datapath-edicion8

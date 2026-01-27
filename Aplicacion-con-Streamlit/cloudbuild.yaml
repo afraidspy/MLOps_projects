@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build',
+     '--no-cache',
+     '-f',
+      'Dockerfile.prod', 
+      '-t', 
+      'us-central1-docker.pkg.dev/mlops-14-fast-api-jessica-san/repo-streamlit4-datapath/image-v1-servicio-streamlit-prediccion-datapath:latest', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/mlops-14-fast-api-jessica-san/repo-streamlit4-datapath/image-v1-servicio-streamlit-prediccion-datapath:latest']
+
+

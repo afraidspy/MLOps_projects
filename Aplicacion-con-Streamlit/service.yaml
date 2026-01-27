@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: mlops-14-streamlit-jessica-san
+spec:
+  template:
+    spec:
+      containers:
+        - image: us-central1-docker.pkg.dev/mlops-14-fast-api-jessica-san/repo-streamlit4-datapath/image-v1-servicio-streamlit-prediccion-datapath:latest
+          ports:
+            - containerPort: 4000

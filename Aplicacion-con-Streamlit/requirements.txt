@@ -1,0 +1,15 @@
+streamlit
+
+python-multipart
+
+ipykernel
+numpy
+pandas
+scipy
+matplotlib
+seaborn 
+scipy
+
+scikit-learn
+feature-engine
+joblib
